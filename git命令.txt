@@ -1,0 +1,55 @@
+本地库初始化
+git init  
+
+设置签名，在仓库所在文件加下设置，随便填内容 name和email
+git config user.name tom_pro 
+git config user.email goodMorning_pro@atguigu.com
+
+状态查看，查看工作区、暂存区状态
+git status
+
+添加, 将工作区的“新建/修改/删除”添加到暂存区
+git add [file name]
+
+提交，将暂存区的内容提交到本地库，中间commit message为提交信息说明
+git commit -m "commit message" [file name]
+
+查看历史记录，多屏显示控制方式： 空格向下翻页 b 向上翻页 q 退出
+git log
+git log --pretty=oneline
+git log --oneline
+git reflog
+
+仓库版本前进后退控制
+git reset --hard [局部索引值] 配合git reflog先查看版本hash值，然后设置
+git reset --hard a6ace91 
+使用^符号：只能后退，注：一个^表示后退一步，n 个表示后退 n 步 
+git reset --hard HEAD^ 
+使用~符号：只能后退，注：表示后退 n 步
+git reset --hard HEAD~n 
+
+创建分支 
+git branch [分支名]
+查看分支 
+git branch -v
+切换分支 
+git checkout [分支名]
+合并分支， A合并B，用上面命令先切换到A分支
+git merge [被合并的分支名]
+
+查看当前所有远程地址别名
+git remote -v 
+
+添加关联远程仓库 
+git remote add [别名] [远程地址]
+
+本地仓库推送到远程仓库
+git push [别名] [分支名]
+
+更新远程仓库到本地仓库，pull=fetch+merge 
+git fetch [远程库地址别名] [远程分支名] 
+git merge [远程库地址别名/远程分支名] 
+git pull [远程库地址别名] [远程分支名]
+
+从某个本地文件夹下载远程仓库，会自动将该目录变成本地仓库
+git clone [远程地址]
